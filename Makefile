@@ -2,7 +2,7 @@
 
 # Configuration
 # --------------
-DEMO_DIRS := IronTuner
+DEMO_DIRS := OhmtalAxe
 
 BASE_BUILD_DIR := _build
 WEBDIST_DIR := dist_web
