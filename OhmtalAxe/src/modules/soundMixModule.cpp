@@ -64,7 +64,7 @@ void SoundMixModule::DrawVisualAnalyzer(bool* p_enabled) {
         if (ImFlux::LEDCheckBox(mSpectrumAnalyzer->getName(), &isEnabled, mSpectrumAnalyzer->getColor()))
             mSpectrumAnalyzer->setEnabled(isEnabled);
         float fullWidth = ImGui::GetContentRegionAvail().x;
-        mSpectrumAnalyzer->DrawSpectrumAnalyzer(ImVec2(fullWidth, 80.0f));
+        mSpectrumAnalyzer->DrawSpectrumAnalyzer(ImVec2(fullWidth, 80.0f), true , 32);
         ImGui::EndGroup();
         ImGui::PopID();
         ImGui::Spacing();
@@ -167,6 +167,7 @@ bool SoundMixModule::Initialize() {
 
 
     mSpectrumAnalyzer = cast_unique<DSP::SpectrumAnalyzer>(DSP::EffectFactory::Create(DSP::EffectType::SpectrumAnalyzer));
+    if (mSpectrumAnalyzer) mSpectrumAnalyzer->setFFTSize(2048);
     mVisualAnalyzer = cast_unique<DSP::VisualAnalyzer>(DSP::EffectFactory::Create(DSP::EffectType::VisualAnalyzer));
 
 

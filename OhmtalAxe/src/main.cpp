@@ -18,7 +18,7 @@ AppMain* getMain() {
 
 int main(int argc, char* argv[])
 {
-    SDL_SetHint(SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES, "2048");
+    SDL_SetHint(SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES,"1024" /*"2048"*/);
 
     (void)argc; (void)argv;
     AppMain* app = new AppMain();
@@ -29,6 +29,7 @@ int main(int argc, char* argv[])
     app->mSettings.WindowMaximized = true;
     app->mSettings.ScreenWidth  = 1920;
     app->mSettings.ScreenHeight = 1080;
+    app->mSettings.PauseMainThreadOnWindowMinimized = true;
 
     app->mSettings.IconFilename = "assets/icon.bmp";
 
