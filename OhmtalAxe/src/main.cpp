@@ -18,11 +18,13 @@ AppMain* getMain() {
 
 int main(int argc, char* argv[])
 {
+    SDL_SetHint(SDL_HINT_AUDIO_DEVICE_SAMPLE_FRAMES, "2048");
+
     (void)argc; (void)argv;
     AppMain* app = new AppMain();
     app->mSettings.Company = "Ohmtal";
     app->mSettings.Caption = "Axe";
-    app->mSettings.Version = "1.260225";
+    app->mSettings.Version = "1.260422.23";
     app->mSettings.enableLogFile = true;
     app->mSettings.WindowMaximized = true;
     app->mSettings.ScreenWidth  = 1920;
